@@ -1,18 +1,16 @@
 from django.db import models
-
 from django.contrib.auth.models import AbstractUser, UserManager
 from django.db import models
 
 class CustomUser(AbstractUser):
-    tel = models.IntegerField(unique=True)
+    tel = models.IntegerField(unique=True , blank=False, null=False)
     email = models.EmailField(unique=True, blank=False, null=False)
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['username']
+    REQUIRED_FIELDS = ['username' , 'tel']
+
 
     objects = UserManager() # Use the default UserManager or a custom one if needed
-
-
 
 
 class Item(models.Model):

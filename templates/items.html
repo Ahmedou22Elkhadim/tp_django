@@ -37,7 +37,10 @@
 </head>
 <body>
     <h1>Items List</h1>
-
+     <a href="{% url 'create_item'  %}" 
+               style="padding:6px 20px; background:#279e0f; color:white; text-decoration:none; border-radius:4px;">
+               Ajouter item
+    </a> 
     {% if items %}
         <table>
             <thead>
@@ -45,6 +48,7 @@
                     <th>ID</th>
                     <th>Name</th>
                     <th>Description</th> 
+                    <th>Actions</th> 
                 </tr>
             </thead>
             <tbody>
@@ -53,6 +57,18 @@
                     <td>{{ item.id }}</td>
                     <td>{{ item.name }}</td>
                     <td>{{ item.description }}</td>
+                     <td>
+            <a href="{% url 'edit_item' item.id %}" 
+               style="padding:6px 12px; background:#3498db; color:white; text-decoration:none; border-radius:4px;">
+               Modifier
+            </a>
+
+            <a href="{% url 'delete_item' item.id %}" 
+               style="padding:6px 12px; background:#e74c3c; color:white; text-decoration:none; border-radius:4px; margin-left:10px;"
+               onclick="return confirm('Voulez-vous vraiment supprimer cet élément ?');">
+               Supprimer
+            </a>
+        </td>
                 </tr>
                 {% endfor %}
             </tbody>

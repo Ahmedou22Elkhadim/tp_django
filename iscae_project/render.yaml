@@ -1,6 +1,7 @@
 services:
   - type: web
-    name: iscae_app
+    name: iscae_tp_django
     env: python
     buildCommand: "pip install -r requirements.txt"
-    startCommand: "gunicorn monprojet.wsgi:application"
+    startCommand: "gunicorn iscae_tp_django.wsgi:application"
+"

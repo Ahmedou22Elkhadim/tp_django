@@ -1,1 +1,1 @@
-web: gunicorne iscae_tp_django.wsgi
+web: gunicorne iscae_project.wsgi

@@ -1,0 +1,1 @@
+web: gunicorne iscae_tp_django.wsgi

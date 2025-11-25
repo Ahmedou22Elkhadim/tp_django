@@ -44,9 +44,9 @@ def edit_item(request , id) :
     
 def supprimer_item(request , id) :
     items = Item.objects.get(id=id)
-    if request.method == "GET":
-       items.delete()
-       return redirect('list_item')
+    # if request.method == "GET":
+    items.delete()
+    return redirect('list_item')
 
 
 

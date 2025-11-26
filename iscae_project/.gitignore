@@ -1,2 +1,2 @@
 .env
-echo "db.sqlite3" >> .gitignore
+db.sqlite3
